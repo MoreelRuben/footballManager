@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Football Tactic</title>
+    <link rel="stylesheet" href="./assets/css/tactic.css" />
+</head>
+<body>
+	<h1>Football Tactic</h1>
+	<div id="field">
+		<div id="field-areas">
+			<div class="field-area" data-position="GK"></div>
+			<div class="field-area" data-position="RB"></div>
+			<div class="field-area" data-position="RCB"></div>
+			<div class="field-area" data-position="LCB"></div>
+			<div class="field-area" data-position="LB"></div>
+			<div class="field-area" data-position="CDM"></div>
+			<div class="field-area" data-position="RCM"></div>
+			<div class="field-area" data-position="LCM"></div>
+			<div class="field-area" data-position="CAM"></div>
+			<div class="field-area" data-position="LW"></div>
+			<div class="field-area" data-position="CF"></div>
+			<div class="field-area" data-position="RW"></div>
+		</div>
+	</div>
+	<ul id="player-list">
+		<li class="player-list-item" data-position="GK"></li>
+		<li class="player-list-item" data-position="RB"></li>
+		<li class="player-list-item" data-position="RCB"></li>
+		<li class="player-list-item" data-position="LCB"></li>
+		<li class="player-list-item" data-position="LB"></li>
+		<li class="player-list-item" data-position="CDM"></li>
+		<li class="player-list-item" data-position="RCM"></li>
+		<li class="player-list-item" data-position="LCM"></li>
+		<li class="player-list-item" data-position="CAM"></li>
+		<li class="player-list-item" data-position="LW"></li>
+		<li class="player-list-item" data-position="CF"></li>
+		<li class="player-list-item" data-position="RW"></li>
+	</ul>
+	<script>
+		const fieldAreas = document.querySelectorAll('.field-area');
+		const playerListItems = document.querySelectorAll('.player-list-item');
+		let draggingPlayer = null;
+
+		playerListItems.forEach(playerListItem => {
+			playerListItem.addEventListener('dragstart', () => {
+				playerListItem.classList.add('dragging');
+				draggingPlayer = playerListItem;
+			});
+
+			playerListItem.addEventListener('dragend', () => {
+				playerListItem.classList.remove('dragging');
+				draggingPlayer = null;
+			});
+		});
+
+		fieldAreas.forEach(fieldArea => {
+			fieldArea.addEventListener('dragover', event => {
+				event.preventDefault();
+				if (fieldArea.childNodes.length === 0) {
+					fieldArea.classList.add('highlight');
+				}
+			});
+
+			fieldArea.addEventListener('dragleave', () => {
+				fieldArea.classList.remove('highlight');
+			});
+
+			fieldArea.addEventListener('drop', event => {
+				event.preventDefault();
+				if (fieldArea.childNodes.length === 0) {
+					fieldArea.appendChild(draggingPlayer);
+					fieldArea.classList.remove('highlight');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
