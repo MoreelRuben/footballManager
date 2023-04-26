@@ -41,7 +41,7 @@ body {
   
   /* main content section */
   main {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -50,6 +50,7 @@ body {
   
   section {
     margin-bottom: 20px;
+    width: 100%;
   }
   
   section h2 {
@@ -65,6 +66,27 @@ body {
   section li {
     margin-bottom: 10px;
   }
+
+  #overviewcontent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  #overviewcontent img{
+    width: 100px;
+  }
+
+  #jerseys div{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+  }
+
+  #overviewcontent div {
+    padding-left: 15%;
+  }
   
   .btn {
     display: inline-block;
@@ -77,6 +99,81 @@ body {
   
   .btn:hover {
     background-color: #555;
+  }
+
+  .squad ul li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5% / 3.5%;
+    box-shadow: -5px -5px 5px -5px var(--color1), 5px 5px 5px -5px var(--color2), -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+    will-change: transform, filter;
+    background-color: #333;
+    transform-origin: center;
+    color: white;
+  }
+
+  .first{
+    z-index: 5;
+    margin-top: -2%;
+    margin-bottom: -2%;
+  }
+
+  .thirth{
+    margin-right: -2%;
+    z-index: 2;
+  }
+
+  .second{
+    margin-left: -2%;
+    z-index: 3;
+    margin-top: -1%;
+    margin-bottom: -1%;
+  }
+
+  .second p {
+    margin-left: 4%;
+  }
+
+  li img{
+    width: 150px;
+    align-self: center;
+  }
+
+  li h2{
+    align-self: center;
+  }
+
+  li p {
+    padding-left: 5%;
+  }
+
+  li div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2%;
+    margin-bottom: 0%;
+  }
+
+  li div div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .squad ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .squad{
+    width: 100%;
   }
   
   /* media queries */
@@ -119,4 +216,28 @@ body {
       display: block;
       margin: 10px auto;
     }
+
+    .squad ul{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .second, .thirth, .first{
+      margin: 0%;
+      margin-bottom: 5%;
+    }
+    .second p {
+      margin-left: 0%;
+    }
   }
+
+  
+  :root {
+    --color1: #00e7ff;
+    --color2: #ff00e7;
+ }
+ 
+
+  
+
+  

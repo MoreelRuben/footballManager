@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Match Schedule</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+
+		th, td {
+			text-align: center;
+			padding: 0.5rem;
+			border: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+
+		.team {
+			display: flex;
+			align-items: center;
+		}
+
+		.team img {
+			max-width: 30px;
+			margin-right: 0.5rem;
+		}
+
+		.date {
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Match Schedule</h1>
+	<div class="schedule">
+		<div class="date">Monday, May 1st</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Time</th>
+					<th>Home Team</th>
+					<th>Away Team</th>
+					<th>Venue</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>12:00 PM</td>
+					<td class="team"><img src="away-team-logo.png" alt="Away Team Logo">Away Team</td>
+					<td>Stadium 1</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="date">Tuesday, May 2nd</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Time</th>
+					<th>Home Team</th>
+					<th>Away Team</th>
+					<th>Venue</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1:00 PM</td>
+					<td class="team"><img src="home-team-logo.png" alt="Home Team Logo">Home Team</td>
+					<td>Stadium 3</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
